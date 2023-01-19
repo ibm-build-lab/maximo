@@ -1,3 +1,3 @@
 # Maximo
 
-Collection of Maximo artifacts like Python scripts and custom pipelines of Maximo Visual Inspection Edge.
+Collection of Maximo artifacts, including Python scripts and Maximo Visual Inspection Edge custom pipelines.
