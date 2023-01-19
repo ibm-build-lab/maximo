@@ -24,7 +24,7 @@ def easy_ocr(app):
             try:
                 for fl in files_to_add:
                     img = cv2.imread(os.path.join(root, dir, fl))
-                    reader = easyocr.Reader(['en'], gpu=False)
+                    reader = easyocr.Reader(['en'], gpu=True)
                     result = reader.readtext(img)
                     matched_label, op_directory, labels = process_result(result, root, dir, fl, app)
                     response_data.append({'imageId': fl,

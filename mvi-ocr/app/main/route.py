@@ -52,12 +52,20 @@ def ocr():
         result = easy_ocr(current_app)
         #Removing file content after processing
         open(os.path.join(current_app.config['BASE_DIR'], 'ocr_inferences.csv'), 'w').close()
-        return render_template('ocr.html', message='', dir=current_app.config['DIR_NAME_FOR_NXT_INF'], data=result, imgeUrl=current_app.config['MVIE_BASE_URL'] + VISION_EDGE_IMG_PATH + current_app.config['MVIE_INSPTN_UUID'] +'/')
+        return render_template('ocr.html',
+            message='',
+            dir=current_app.config['DIR_NAME_FOR_NXT_INF'],
+            data=result,
+            imgeUrl=current_app.config['MVIE_BASE_URL'] + VISION_EDGE_IMG_PATH + current_app.config['MVIE_INSPTN_UUID'] +'/')
     elif action == "viewOcrProcessed":
         csv = os.path.join(current_app.config['BASE_DIR'], 'ocr_output.csv')
         field_name = ("imageId","mviLabel","ocrMatchedLabel","dirPath", "labels")
         result = read_ocr_processed_csv(csv, field_name)
-        return render_template('ocr.html', message='OCR Output', dir=current_app.config['DIR_NAME_FOR_NXT_INF'], data=result, imgeUrl=current_app.config['MVIE_BASE_URL'] + VISION_EDGE_IMG_PATH + current_app.config['MVIE_INSPTN_UUID'] +'/')
+        return render_template('ocr.html',
+            message='OCR Output',
+            dir=current_app.config['DIR_NAME_FOR_NXT_INF'],
+            data=result,
+            imgeUrl=current_app.config['MVIE_BASE_URL'] + VISION_EDGE_IMG_PATH + current_app.config['MVIE_INSPTN_UUID'] +'/')
     else:
         csv = os.path.join(current_app.config['BASE_DIR'], 'ocr_inferences.csv')
         field_name = ("imageId","score","label","dirPath")
@@ -77,7 +85,9 @@ def output():
     ocr_result = read_ocr_processed_csv(ocr_csv, field_name)
     f_ocr_result = filter(lambda x: x["ocrMatchedLabel"] != '', ocr_result)
 
-    return render_template('output.html', data=f_ocr_result, imgeUrl=current_app.config['MVIE_BASE_URL'] + VISION_EDGE_IMG_PATH + current_app.config['MVIE_INSPTN_UUID'] +'/')
+    return render_template('output.html',
+        data=f_ocr_result,
+        imgeUrl=current_app.config['MVIE_BASE_URL'] + VISION_EDGE_IMG_PATH + current_app.config['MVIE_INSPTN_UUID'] +'/')
 
 
 @main.route('/processed')
@@ -85,7 +95,9 @@ def processed():
     csv = os.path.join(current_app.config['BASE_DIR'], 'inferences.csv')
     field_name = ("imageId","score","label","dirPath")
     result = read_csv(csv, field_name, current_app.config['PROCESSED_OP_DIR_NAME'], True)
-    return render_template(FILES_HTML, data=result, dir=current_app.config['PROCESSED_OP_DIR_NAME'], 
+    return render_template(FILES_HTML,
+        data=result,
+        dir=current_app.config['PROCESSED_OP_DIR_NAME'],
         imgeUrl=current_app.config['MVIE_BASE_URL'] + VISION_EDGE_IMG_PATH + current_app.config['MVIE_INSPTN_UUID'] +'/')
 
 
