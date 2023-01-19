@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h4>{{message}}</h4>
+<br>
+
+<table id="ocrTable" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Image Id</th>
+            <th scope="col">MVI Label</th>
+            <th scope="col">OCR Matched Label</th>
+            <th style="width: 25%;" scope="col">View</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if data is defined %}
+            {% for d in data %}
+            <tr>
+                <td style="vertical-align: middle;">{{d.imageId}}</td>
+                <td style="vertical-align: middle;">{{d.mviLabel}}</td>
+                <td style="vertical-align: middle;">{{d.ocrMatchedLabel}}</td>
+                <td><a href="{{ imgeUrl + d.imageId }}" target="_blank" rel="noopener" ><img alt="{{d.imageId}}" style="width: 10%; height: auto;" src="{{ imgeUrl + d.imageId }}"/></a></td>
+            </tr>
+            {% endfor %}
+        {% endif %}    
+    </tbody>
+</table>
+
+
+<script>
+    $(document).ready(function () {
+        $('#ocrTable').DataTable();
+    });
+</script>
+
+{% endblock content %}
+

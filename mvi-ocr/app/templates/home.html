@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h4>{{message}}</h4>
+<br>
+
+{% if show_table %}
+    <table id="homeTable" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Label</th>
+                <th scope="col">Confidence</th>
+                <th scope="col">Image Id</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if data is defined %}
+                {% for d in data %}
+                <tr>
+                    <td style="vertical-align: middle;">{{d.label}}</td>
+                    <td style="vertical-align: middle;">{{d.confidence}}</td>
+                    <td style="vertical-align: middle;">{{d.imageId}}</td>
+                    <td><a href="{{d.imageUrl}}" rel="noopener" target="_blank"><img alt="{{d.imageUrl}}" style="width: 10%; height: auto;" src="{{d.imageUrl}}"/></a></td>
+                </tr>
+                {% endfor %}
+            {% endif %}    
+        </tbody>
+    </table>
+{% endif %}
+
+<script>
+    $(document).ready(function () {
+        $('#homeTable').DataTable();
+    });
+</script>
+
+{% endblock content %}
+

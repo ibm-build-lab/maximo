@@ -1,0 +1,6 @@
+flask
+requests
+Easyocr
+opencv-python==4.5.5.64
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.20.8
