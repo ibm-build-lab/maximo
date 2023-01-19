@@ -39,7 +39,7 @@ Make sure that you have run `pip3 install -r requirements.txt` before running th
 
 ## MVIE useful APIs
 
-###Login to MVI Edge
+### Login to MVI Edge
 
 `POST https://<MVIE_URL>/api/v1/users/sessions`
 
