@@ -9,7 +9,7 @@ This project is solution to this particular use case by tying in MVI with an Opt
 
 <img width="801" alt="image" src="https://user-images.githubusercontent.com/7766512/213415229-1f2072b0-f86d-421e-ab9e-84ccce03fd43.png">
 
-This solution was specific to product recognition, it can be used for any project where we are using MVI for object recognition where there can be text on the object that may provide a second categorization.
+This solution can be used for any project where we are using MVI for object recognition where there can be text on the object that may provide a second categorization.
 
 ## Configurations
 
