@@ -14,7 +14,7 @@ One solution to this, was to use MVI to recognize the brand and attempt to recog
 
 Although this solution was specific to product recognition, it can be used for any project where we are using MVI for object recognition where there can be text on the object that may provide a second categorization.
 
-<img width="801" alt="image" src="https://user-images.githubusercontent.com/7766512/213415229-1f2072b0-f86d-421e-ab9e-84ccce03fd43.png">
+<img width="801" alt="image" src="https://raw.githubusercontent.com/ibm-build-lab/maximo/main/mvi-ocr/images/flow.png">
 
 Since this solution is meant for handling thousands of files per hour, we proposed separating the logic into a separate VM with an additional GPU that the OCR solution can utilize for faster processing.  This also allows the customer to tie in some of their customized logic on that VM.
 
