@@ -31,7 +31,7 @@ def add_image_to_device(app, mvie_session, file_util):
     for fl in files_to_add:
         try:
             files = {'file': open(input_directory + fl, 'rb')}
-            response = requests.post(app.config['MVIE_ADD_IMG_DVC_URL'], files=files , headers=headers, verify=True)
+            response = requests.post(app.config['MVIE_ADD_IMG_DVC_URL'], files=files , headers=headers, verify=app.config['SSL_VALIDATION'])
             response_data = response.json()
             logger.debug('Response received %s', str(response_data))
             if response.status_code == 200:

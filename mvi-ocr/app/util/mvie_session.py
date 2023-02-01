@@ -25,7 +25,9 @@ class MvieSession:
             "username": app.config['MVIE_USERNAME']
         }
 
-        response = requests.post(login_url, headers=headers, verify=True, json=data)
+        print(login_url)
+        response = requests.post(login_url, headers=headers, verify=app.config['SSL_VALIDATION'], json=data)
+        print(response)
 
         if response.status_code == 200:
             response_data = response.json()

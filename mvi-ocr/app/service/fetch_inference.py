@@ -30,7 +30,7 @@ def get_inference_images(app, mvie_session):
         inference_image_url = inference_image_url + '&image_id=' + last_fetched_image_id
 
     try:
-        response = requests.get(inference_image_url, headers=headers, verify=True)
+        response = requests.get(inference_image_url, headers=headers, verify=app.config['SSL_VALIDATION'])
         response_data = response.json()
         logger.debug('Image inference response received')
 
@@ -74,10 +74,10 @@ def check_result(response_data, current_app, mvie_session):
                 result.append({'imageId': image_id, 'imageUrl': image_url,'label': label, 'confidence': confidence})
                 write_to_file(image_id, confidence, label, ocr_files_dir + label, current_app, 'ocr_inferences.csv')
                 write_to_file(image_id, confidence, label, ocr_files_dir + label, current_app, 'inferences.csv')
-                download_image(ocr_files_dir + label, image_url, image_id)
-                download_image(processed_files_dir + label, image_url, image_id)
+                download_image(ocr_files_dir + label, image_url, image_id, current_app)
+                download_image(processed_files_dir + label, image_url, image_id, current_app)
             else:
-                download_image(unidentified_files_dir, image_url, image_id)
+                download_image(unidentified_files_dir, image_url, image_id, current_app)
 
         except Exception as e:
             mvie_session.update_max_image_id(image_id)
@@ -86,11 +86,11 @@ def check_result(response_data, current_app, mvie_session):
     mvie_session.update_max_image_id(image_id)
     return result
 
-def download_image(directory, image_url, image_id):
+def download_image(directory, image_url, image_id, current_app):
     if not os.path.exists(directory):
         os.makedirs(directory)
     
-    res = requests.get(image_url, stream = True, verify=True)
+    res = requests.get(image_url, stream = True, verify=current_app.config['SSL_VALIDATION'])
 
     if res.status_code == 200:
         with open(os.path.join(directory, image_id),'wb') as img:
