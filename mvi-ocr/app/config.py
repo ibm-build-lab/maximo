@@ -15,8 +15,8 @@ class Config:
     OCR_PCSD_DIR = "ocr_processed/"
     OCR_UNCTZD_DIR = "ocr_uncategorized/"
 
-    #It is recommaned to set is True. If is set to False, it will expose application to security risk
-    SSL_VALIDATION = False
+    #It is recommaned to set this True. If it is set to False, it will expose application to security risk
+    SSL_VALIDATION = True
 
     # List of labels to match with OCR
     OCR_LABELS_TO_MATCH = []
