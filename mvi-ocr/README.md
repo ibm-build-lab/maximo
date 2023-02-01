@@ -22,10 +22,11 @@ Since this solution is meant for handling thousands of files per hour, we propos
 
 Solution can be downloaded and customized for your particular use case as needed.  Below is the use and configuration of the Python automation script that uses the APIs exposed by MVI Edge to upload images to MVI Edge for inspections and to fetch the inferences.  Python webapp is built using Python Flask framework.  For web UI, Jinja – Web template engine is used.
 
-Clone the solution using `git clone https://github.com/ibm-build-lab/maximo.git`
+Clone the solution `git clone https://github.com/ibm-build-lab/maximo.git`
 
 ## Login to VM
 
+If you are using VM to run this solution login to VM
 `ssh <user>@<host> -i <p_key>`
 
 ## Deploy Source Code
@@ -147,7 +148,7 @@ mvie-controller : <session_token>
 
 ## Project structure
 
-<img width="801" alt="image" src="https://raw.githubusercontent.com/ibm-build-lab/maximo/main/mvi-ocr/images/structure.png">
+<img alt="image" src="https://raw.githubusercontent.com/ibm-build-lab/maximo/main/mvi-ocr/images/structure.png">
 
 ### requirements.txt
 
