@@ -14,7 +14,7 @@ One solution to this, was to use MVI to recognize the brand and attempt to recog
 
 Although this solution was specific to product recognition, it can be used for any project where we are using MVI for object recognition where there can be text on the object that may provide a second categorization.
 
-<img width="801" alt="image" src="https://raw.githubusercontent.com/ibm-build-lab/maximo/main/mvi-ocr/images/flow.png">
+<img width="801" alt="flow" src="https://user-images.githubusercontent.com/7766512/216315617-731ee6d6-7297-4bd4-a495-e66c3a6c3faf.png">
 
 Since this solution is meant for handling thousands of files per hour, we proposed separating the logic into a separate VM with an additional GPU that the OCR solution can utilize for faster processing.  This also allows the customer to tie in some of their customized logic on that VM.
 
@@ -84,11 +84,12 @@ After running above command, application will be available at `http://<host>:500
 
 With default configuration some directories and csv files will be automatically created under directory name configured for `BASE_DIR` config. The directories’ name can configured in [config.py](app/config.py) file. 
 
-<img width="801" alt="image" src="https://raw.githubusercontent.com/ibm-build-lab/maximo/main/mvi-ocr/images/directories.png">
+<img width="611" alt="directories" src="https://user-images.githubusercontent.com/7766512/216315735-4c4d4c6f-a9a8-49dd-9bb3-c66e51b07a7e.png">
 
 Put files in input directory that you wish to upload to input source of MVI Edge for inference.
 
-<img width="801" alt="image" src="https://raw.githubusercontent.com/ibm-build-lab/maximo/main/mvi-ocr/images/home.png">
+<img width="1530" alt="home" src="https://user-images.githubusercontent.com/7766512/216315786-52ca71f7-6b9b-47b3-8fa3-460e3234d4d6.png">
+
 
 Click on `Upload Image` button on home page to send files to MVI Edge. Once files are uploaded, files from input directory will be moved to `uploaded` directory for backup. 
 
@@ -96,7 +97,8 @@ Click on `Fetch Inferences` to fetch the inferences of recently uploaded images.
 
 `Inferences` page displays the list of fetched inferences till date with Label detected on image, Confidence score and other metadata.
 
-<img width="801" alt="image" src="https://raw.githubusercontent.com/ibm-build-lab/maximo/main/mvi-ocr/images/inference.png">
+<img width="1274" alt="inference" src="https://user-images.githubusercontent.com/7766512/216315877-98df5c5a-7af3-40b6-8316-0a47b166eb5a.png">
+
 
 If additional categorization is need on fetched inferences, click on `OCR/Process` OCR to pass images to OCR solution. This will display only those images for which object is detected and is under `processed` folder.
 
@@ -148,7 +150,8 @@ mvie-controller : <session_token>
 
 ## Project structure
 
-<img alt="image" src="https://raw.githubusercontent.com/ibm-build-lab/maximo/main/mvi-ocr/images/structure.png">
+<img width="157" alt="structure" src="https://user-images.githubusercontent.com/7766512/216315974-5293611b-b616-4611-842e-3c5b8699bdd0.png">
+
 
 ### requirements.txt
 
