@@ -10,8 +10,6 @@ This custom function enables organizations to configure high or low alerts and U
 
 Create an empty github directory. You need to place the custom function(which you will clone in next step) in this directory and need to push it into Github. You will use this directory to install custom function in Maximo Monitor.
 
-### 2. Clone the custom function to your system
-
 Clone the directory  `maximo` into a folder on your local machine. You can do this using
 
 ``` 
@@ -20,7 +18,7 @@ git clone https://github.com/ibm-build-lab/maximo.git
 
 make copy of `masmonitor-external-notification` directory to your newly created github directory.
 
-### 3. Update the credentials file
+### 2. Update the credentials file
 
 [Credentials](./resources/credentials.json) is config where we you need to add all the required details and API keys for connecting database and IoT application.
 
