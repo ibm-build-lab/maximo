@@ -16,7 +16,7 @@ Clone the directory  `maximo` into a folder on your local machine. You can do th
 git clone https://github.com/ibm-build-lab/maximo.git
 ```
 
-make copy of `masmonitor-external-notification` directory to your newly created Gitub directory.
+make copy of `masmonitor-external-notification` directory to your newly created GitHub directory.
 
 ### 2. Update the credentials file
 
