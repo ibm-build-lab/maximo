@@ -4,6 +4,10 @@ Maximo Monitor, a powerful asset management monitoring tool, provides a comprehe
 
 This custom function enables organizations to configure high or low alerts and URLs to external systems, allowing them to receive notifications when alerts are generated in Maximo Monitor. This integration is particularly useful when external systems need to take action based on the alerts generated in Maximo Monitor. For instance, if an organization uses ServiceNow for incident management, they can configure the custom function to send alerts to ServiceNow, which will then trigger the appropriate incident management process.
 
+Authors
+
+Jatindra Suthar(jatindra.suthar@ibm.com), Hans Klose (Hans.J.Klose@ibm.com) and Nidhi Jain (nidhi.jain19@ibm.com)
+
 ## Configurations
 
 ### 1.Clone the custom function to your system
