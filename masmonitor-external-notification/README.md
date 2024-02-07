@@ -6,7 +6,7 @@ This custom function enables organizations to configure high or low alerts and U
 
 **Authors**
 
-Jatindra Suthar(jatindra.suthar@ibm.com), Hans Klose (Hans.J.Klose@ibm.com) and Nidhi Jain (nidhi.jain19@ibm.com)
+Jatindra Suthar, Hans Klose and Nidhi Jain
 
 ## Configurations
 
